@@ -9,14 +9,14 @@ function handleAdd() {
   const li = document.createElement('li');
   // p 생성
   const p = document.createElement('p');
-  console.log(li, p);
+  // console.log(li, p);
 
   // memo 입력값: value
-  console.log(memoEl.value);
+  // console.log(memoEl.value);
 
   // p요소에 입력값을 추가
   p.textContent = memoEl.value;
-  console.log(p)
+  // console.log(p)
   memoEl.value = ''; // 입력 완료 후 내용 비움(초기화)
 
   // 삭제버튼
@@ -26,7 +26,14 @@ function handleAdd() {
   // li에 p와 button 추가
   li.appendChild(p);
   li.appendChild(delBtn);
-  console.log(li)
+  console.log(li);
+
+  // class 추가
+  li.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
+  delBtn.classList.add('btn', 'btn-danger');
+
+  // #memoList 목록에 li(글) 추가
+  document.getElementById('memoList').appendChild(li);
   
 }
 
