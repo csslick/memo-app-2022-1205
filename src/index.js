@@ -38,7 +38,7 @@ function handleAdd(content = '') {
     const li = event.target.parentElement.parentElement.children;
     const li_idx = [...li].indexOf(event.target.parentElement)
     console.log(li.length, `index = ${li_idx}`)
-    // *** text code end
+    // *** test code end
 
     // event.target: 사용자가 선택한 요소
     console.log('event.target = ', event.target)
