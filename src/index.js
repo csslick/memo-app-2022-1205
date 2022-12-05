@@ -26,7 +26,7 @@ function handleAdd() {
   // li에 p와 button 추가
   li.appendChild(p);
   li.appendChild(delBtn);
-  console.log(li);
+  // console.log(li);
 
   // class 추가
   li.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
@@ -34,8 +34,23 @@ function handleAdd() {
 
   // #memoList 목록에 li(글) 추가
   document.getElementById('memoList').appendChild(li);
+
+  // 삭제버튼에 이벤트 등록
+  delBtn.addEventListener('click', (event) => {
+    // *** test code 
+    const li = event.target.parentElement.parentElement.children;
+    const li_idx = [...li].indexOf(event.target.parentElement)
+    console.log(li.length, `index = ${li_idx}`)
+    // *** text code end
+
+    // event.target: 사용자가 선택한 요소
+    console.log('event.target = ', event.target)
+
+    // li(부모) 삭제(탐색)
+    event.target.parentElement.remove();
+  })
   
-}
+} // handAdd
 
 
 // 입력(추가) 버튼 선택
