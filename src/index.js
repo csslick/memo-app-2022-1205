@@ -1,7 +1,7 @@
 // index.js
 
 // 입력시 실행될 함수
-function handleAdd() {
+function handleAdd(content = '') {
   // memo 입력요소
   const memoEl = document.getElementById('memo');
 
@@ -11,11 +11,8 @@ function handleAdd() {
   const p = document.createElement('p');
   // console.log(li, p);
 
-  // memo 입력값: value
-  // console.log(memoEl.value);
-
   // p요소에 입력값을 추가
-  p.textContent = memoEl.value;
+  p.textContent = memoEl.value || content; // 둘 중에 값이 있는거 입력
   // console.log(p)
   memoEl.value = ''; // 입력 완료 후 내용 비움(초기화)
 
@@ -60,3 +57,10 @@ const addBtn = document.getElementById('addBtn');
 addBtn.addEventListener('click', () => {
   handleAdd(); // 추가함수 호출
 });
+
+
+// 기본 데이터 추가
+handleAdd('밥하기');
+handleAdd('빨래하기');
+handleAdd('다림질 하기');
+handleAdd('강아지 산책 시키기');
