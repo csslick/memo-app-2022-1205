@@ -5,6 +5,11 @@ function handleAdd(content = '') {
   // memo 입력요소
   const memoEl = document.getElementById('memo');
 
+  // 메모 입력없으면 무시
+  if(memoEl.value == "" && content == '') {
+    return;
+  }
+
   // li(문서객체) 생성
   const li = document.createElement('li');
   // p 생성
